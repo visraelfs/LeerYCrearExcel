@@ -12,7 +12,7 @@ namespace ReporteMontosDevengar
     {
         static void Main(string[] args)
         {
-            string rutaArchivoSalida = @"C:\Users\USUARIO\Desktop\MontosPorDevengarCompleto.xlsx";
+            string rutaArchivoSalida = @"C:\Users\USUARIO\Desktop\Montos Por Devengar Completo.xlsx";
             string rutaArchivoOrigen = @"C:\Users\USUARIO\Desktop\Montos por Devengar por EP.xlsx";
             try
             {
@@ -30,11 +30,8 @@ namespace ReporteMontosDevengar
                 //Console.WriteLine("Presione una tecla para continuar...");
                 //Console.ReadKey();
 
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.FileName = "EXCEL.EXE";
-                startInfo.Arguments = rutaArchivoSalida;
-                Process.Start(startInfo);
-
+                ProcessStartInfo startInfo = new ProcessStartInfo();                
+                Process.Start(rutaArchivoSalida);
             }
         }
     }
