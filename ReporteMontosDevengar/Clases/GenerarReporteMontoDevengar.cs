@@ -83,8 +83,8 @@ namespace ReporteMontosDevengar.Clases
 
                 for (int renglon = 2; renglon <= renglones; renglon++)
                 {
-                    decimal valorMensual = Decimal.Parse(hoja1.Cell(renglon, 9).Value.ToString()) / Decimal.Parse(hoja1.Cell(renglon, 8).Value.ToString());
-                    for (int columna = 10; columna < (Int32.Parse(hoja1.Cell(renglon, 8).Value.ToString()) + 10); columna++)
+                    decimal valorMensual = Decimal.Parse(hoja1.Cell(renglon, 10).Value.ToString()) / Decimal.Parse(hoja1.Cell(renglon, 9).Value.ToString());
+                    for (int columna = 11; columna < (Int32.Parse(hoja1.Cell(renglon, 9).Value.ToString()) + 11); columna++)
                     {
                         hoja1.Cell(renglon, columna).Value = valorMensual;
                         hoja1.Cell(renglon, columna).Style.NumberFormat.Format = formatoMoneda;
@@ -96,9 +96,9 @@ namespace ReporteMontosDevengar.Clases
 
                 #region Establece las formula de la sumatoria de los montos por mes
 
-                celdaCabecera = 10;
+                celdaCabecera = 11;
                 int renglonSumatoria = renglones + 1;
-                for (int i = 10; i < (max + 10); i++)
+                for (int i = 11; i < (max + 11); i++)
                 {
 
                     hoja1.Cell(renglonSumatoria, i).FormulaA1 = $"=SUM({ColumnIndexToColumnLetter(i)}2:{ColumnIndexToColumnLetter(i)}{renglones})";
